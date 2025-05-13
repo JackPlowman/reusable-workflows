@@ -38,9 +38,11 @@ jobs:
     name: Common Code Checks
     permissions:
       contents: read
+      pull-requests: read
       security-events: write
     uses: ./.github/workflows/common-code-checks.yml
-    secrets: inherit
+    secrets:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   run-codeql-analysis:
     name: CodeQL Analysis
