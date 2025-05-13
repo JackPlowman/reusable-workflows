@@ -17,7 +17,7 @@ jobs:
     name: Check Code Quality
     permissions:
       statuses: write
-    uses: JackPlowman/reusable-workflows/.github/workflows/super-linter.yml@main
+    uses: ./.github/workflows/super-linter.yml
 
   check-markdown-links:
     name: Check Markdown links
