@@ -9,9 +9,7 @@ on:
         type: string
         default: ".github/super-linter-configurations"
 
-permissions:
-  contents: read
-  packages: read
+permissions: {}
 
 jobs:
   check-code-quality:
