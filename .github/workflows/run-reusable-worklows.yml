@@ -8,8 +8,7 @@ permissions:
   contents: read
 
 jobs:
-  super-linter:
-    name: "Run SuperLinter"
-    permissions:
-      statuses: write
-    uses: JackPlowman/reusable-workflows/.github/workflows/super-linter.yml@main
+  common-code-checks:
+    name: Common Code Checks
+    uses: JackPlowman/reusable-workflows/.github/workflows/common-code-checks.yml@main
+    secrets: inherit
