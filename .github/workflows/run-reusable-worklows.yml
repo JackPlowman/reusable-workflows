@@ -10,5 +10,8 @@ permissions:
 jobs:
   common-code-checks:
     name: Common Code Checks
+    permissions:
+      contents: read
+      security-events: write
     uses: JackPlowman/reusable-workflows/.github/workflows/common-code-checks.yml@main
     secrets: inherit

@@ -37,6 +37,7 @@ jobs:
   common-code-checks:
     name: Common Code Checks
     permissions:
+      contents: read
       security-events: write
     uses: ./.github/workflows/common-code-checks.yml
     secrets: inherit
