@@ -1,8 +1,8 @@
-# Repository Name
+# Reusable Workflows
 
 ## Table of Contents
 
-- [Repository Name](#repository-name)
+- [Reusable Workflows](#reusable-workflows)
   - [Table of Contents](#table-of-contents)
   - [Contributing](#contributing)
 
