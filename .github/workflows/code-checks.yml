@@ -42,7 +42,7 @@ jobs:
       security-events: write
     uses: ./.github/workflows/common-code-checks.yml
     secrets:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      workflow_github_token: ${{ secrets.GITHUB_TOKEN }}
 
   run-codeql-analysis:
     name: CodeQL Analysis

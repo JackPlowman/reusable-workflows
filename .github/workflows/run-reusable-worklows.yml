@@ -16,4 +16,4 @@ jobs:
       security-events: write
     uses: JackPlowman/reusable-workflows/.github/workflows/common-code-checks.yml@main
     secrets:
-      GH_TOKEN: ${{ secrets.GH_TOKEN }}
+      workflow_github_token: ${{ secrets.GITHUB_TOKEN }}
