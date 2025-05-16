@@ -13,4 +13,4 @@ jobs:
     name: Clean GitHub Action Caches
     uses: ./.github/workflows/common-clean-caches.yml
     secrets:
-      workflow_github_token: ${{ secrets.GITHUB_TOKEN }}
+      workflow_github_token: ${{ secrets.GH_TOKEN }}
