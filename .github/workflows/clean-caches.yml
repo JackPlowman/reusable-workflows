@@ -5,12 +5,14 @@ on:
     - cron: "0 0 1 * *"
   workflow_dispatch:
 
-permissions:
-  contents: read
+permissions: {}
+
 
 jobs:
   clean-caches:
     name: Clean GitHub Action Caches
     uses: ./.github/workflows/common-clean-caches.yml
+    permissions:
+      contents: read
     secrets:
       workflow_github_token: ${{ secrets.GH_TOKEN }}
