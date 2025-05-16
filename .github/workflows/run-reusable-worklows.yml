@@ -24,7 +24,7 @@ jobs:
       contents: read
     uses: JackPlowman/reusable-workflows/.github/workflows/common-clean-caches.yml@main
     secrets:
-      workflow_github_token: ${{ secrets.GITHUB_TOKEN }}
+      workflow_github_token: ${{ secrets.GH_TOKEN }}
 
   common-sync-labels:
     name: Common Sync Labels
