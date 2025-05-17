@@ -10,6 +10,10 @@ on:
 permissions:
   contents: read
 
+
+env:
+  FORCE_COLOR: 1
+
 jobs:
   check-markdown-links:
     name: Check Markdown links
