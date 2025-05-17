@@ -17,4 +17,4 @@ jobs:
       pull-requests: write
     uses: ./.github/workflows/common-sync-labels.yml
     secrets:
-      workflow_github_token: ${{ secrets.GH_TOKEN }}
+      workflow_github_token: ${{ secrets.GITHUB_TOKEN }}
