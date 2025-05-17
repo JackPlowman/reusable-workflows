@@ -12,6 +12,6 @@ jobs:
     name: Common Pull Request Tasks
     permissions:
       pull-requests: write
-    uses: ./.github/workflows/common-pull-request-tasks.yml
+    uses: ./common-pull-request-tasks.yml
     secrets:
       workflow_github_token: ${{ secrets.GITHUB_TOKEN }}
