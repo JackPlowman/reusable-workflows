@@ -10,7 +10,7 @@ permissions: {}
 jobs:
   clean-caches:
     name: Clean GitHub Action Caches
-    uses: ./.github/workflows/common-clean-caches.yml
+    uses: ../../common-clean-caches.yml
     permissions:
       contents: read
     secrets:
