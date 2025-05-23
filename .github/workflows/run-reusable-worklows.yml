@@ -34,3 +34,14 @@ jobs:
     uses: JackPlowman/reusable-workflows/.github/workflows/common-sync-labels.yml@main
     secrets:
       workflow_github_token: ${{ secrets.GITHUB_TOKEN }}
+
+  codeql-checks:
+    name: CodeQL Analysis
+    permissions:
+      contents: read
+      security-events: write
+    uses: JackPlowman/reusable-workflows/.github/workflows/codeql-analysis.yml@main
+    with:
+      language: actions
+    secrets:
+      workflow_github_token: ${{ secrets.GITHUB_TOKEN }}
