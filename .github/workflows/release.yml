@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - ".github/workflows/common-*.yml"
+      - ".github/workflows/codeql-analysis.yml"
 
 permissions:
   contents: read
