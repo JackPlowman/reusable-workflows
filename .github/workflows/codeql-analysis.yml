@@ -7,10 +7,6 @@ on:
         required: true
         description: "Language to analyze"
         type: string
-    secrets:
-      workflow_github_token:
-        required: true
-        description: "GitHub token for workflow"
 
 permissions:
   contents: read
