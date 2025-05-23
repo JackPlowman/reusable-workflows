@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   codeql-analysis:
-    name: Analyse ${{ inputs.language }} code
+    name: Analyse code
     runs-on: ubuntu-latest
     permissions:
       security-events: write
