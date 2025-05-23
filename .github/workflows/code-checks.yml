@@ -46,6 +46,7 @@ jobs:
     name: CodeQL Analysis
     uses: ./.github/workflows/codeql-analysis.yml
     permissions:
+      contents: read
       security-events: write
     with:
       language: actions
