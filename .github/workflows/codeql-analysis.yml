@@ -5,15 +5,15 @@ on:
     inputs:
       language:
         required: true
-        description: "Language to analyze"
+        description: "Language to analyse"
         type: string
 
 permissions:
   contents: read
 
 jobs:
-  run-codeql-analysis:
-    name: CodeQL Analysis
+  codeql-analysis:
+    name: Analyse code
     runs-on: ubuntu-latest
     permissions:
       security-events: write

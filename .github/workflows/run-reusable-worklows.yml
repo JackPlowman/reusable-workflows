@@ -40,6 +40,9 @@ jobs:
     permissions:
       contents: read
       security-events: write
+    strategy:
+      matrix:
+        language: [actions]
     uses: JackPlowman/reusable-workflows/.github/workflows/codeql-analysis.yml@main
     with:
-      language: actions
+      language: ${{ matrix.language }}

@@ -42,11 +42,14 @@ jobs:
     secrets:
       workflow_github_token: ${{ secrets.GITHUB_TOKEN }}
 
-  run-codeql-analysis:
+  codeql-checks:
     name: CodeQL Analysis
-    uses: ./.github/workflows/codeql-analysis.yml
     permissions:
       contents: read
       security-events: write
+    strategy:
+      matrix:
+        language: [actions]
+    uses: ./.github/workflows/codeql-analysis.yml
     with:
-      language: actions
+      language: ${{ matrix.language }}
