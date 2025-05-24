@@ -8,3 +8,5 @@ ignore_actions:
     ref: "main"
   - name: "JackPlowman/reusable-workflows/.github/workflows/common-sync-labels.yml"
     ref: "main"
+  - name: "JackPlowman/reusable-workflows/.github/workflows/codeql-analysis.yml"
+    ref: "main"
