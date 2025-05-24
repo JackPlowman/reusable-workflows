@@ -47,7 +47,9 @@ jobs:
     permissions:
       contents: read
       security-events: write
-    strategy: { matrix: { language: [actions] } }
+    strategy:
+      matrix:
+        language: [actions]
     uses: ./.github/workflows/codeql-analysis.yml
     with:
       language: ${{ matrix.language }}
