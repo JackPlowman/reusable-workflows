@@ -22,6 +22,14 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Delete caches
-        run: gh cache delete --all --repo ${{ github.repository }}
+        shell: bash
+        run: |
+          if [[ "${GITHUB_REPOSITORY}" =~ ^[a-zA-Z0-9_.-]+/[a-zA-Z0-9_.-]+$ ]]; then
+            gh cache delete --all --repo "${GITHUB_REPOSITORY}"
+          else
+            echo "Invalid repository name: ${GITHUB_REPOSITORY}"
+            exit 1
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.workflow_github_token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
