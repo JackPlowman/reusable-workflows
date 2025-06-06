@@ -53,6 +53,8 @@ jobs:
     name: Check GitHub Actions with zizmor
     runs-on: ubuntu-latest
     permissions:
+      contents: read
+      actions: read
       security-events: write
     steps:
       - name: Checkout Repository
@@ -60,19 +62,11 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - name: Install the latest version of uv
-        uses: astral-sh/setup-uv@f0ec1fc3b38f5e7cd731bb6ce540c5af426746bb # v6.1.0
-      - name: Set up Just
-        uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3.0.0
       - name: Run zizmor 🌈
-        run: just zizmor-check-sarif
-        env:
-          GH_TOKEN: ${{ secrets.workflow_github_token }}
-      - name: Upload SARIF file
-        uses: github/codeql-action/upload-sarif@fca7ace96b7d713c7035871441bd52efbe39e27e # v3.28.19
+        uses: zizmorcore/zizmor-action@f52a838cfabf134edcbaa7c8b3677dde20045018 # v0.1.1
         with:
-          sarif_file: results.sarif
-          category: zizmor
+          persona: pedantic
+          version: v1.9.0
 
   lefthook-validate:
     name: Lefthook Validate
