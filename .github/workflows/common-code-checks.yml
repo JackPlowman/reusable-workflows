@@ -97,3 +97,15 @@ jobs:
           skip_push: "true"
         env:
           PINACT_CONFIG: .github/other-configurations/pinact.yml
+
+  run-actionlint:
+    name: Run Actionlint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Run Actionlint
+        uses: docker://rhysd/actionlint:887a259a5a534f3c4f36cb02dca341673c6089431057242cdc931e9f133147e9 # v1.7.7
