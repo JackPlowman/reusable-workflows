@@ -91,12 +91,18 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - name: Pin actions
+      - name: Check actions are pinned (with config)
+        if: ${{ hashFiles('.github/other-configurations/pinact.yml') != '' }}
         uses: suzuki-shunsuke/pinact-action@49cbd6acd0dbab6a6be2585d1dbdaa43b4410133 # v1.0.0
         with:
           skip_push: "true"
         env:
           PINACT_CONFIG: .github/other-configurations/pinact.yml
+      - name: Check actions are pinned (without config)
+        if: ${{ hashFiles('.github/other-configurations/pinact.yml') == '' }}
+        uses: suzuki-shunsuke/pinact-action@49cbd6acd0dbab6a6be2585d1dbdaa43b4410133 # v1.0.0
+        with:
+          skip_push: "true"
 
   run-actionlint:
     name: Check GitHub Actions with Actionlint
