@@ -99,7 +99,7 @@ jobs:
           PINACT_CONFIG: .github/other-configurations/pinact.yml
 
   run-actionlint:
-    name: Run Actionlint
+    name: Check GitHub Actions with Actionlint
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -108,4 +108,4 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Run Actionlint
-        uses: docker://rhysd/actionlint:1.7.7
+        uses: docker://rhysd/actionlint:1.7.7 # zizmor: ignore[unpinned-uses]
