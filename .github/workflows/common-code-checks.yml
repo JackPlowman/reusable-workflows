@@ -66,7 +66,7 @@ jobs:
         uses: zizmorcore/zizmor-action@f52a838cfabf134edcbaa7c8b3677dde20045018 # v0.1.1
         with:
           persona: auditor
-          version: 1.10.0
+          version: 1.11.0
 
   lefthook-validate:
     name: Lefthook Validate
