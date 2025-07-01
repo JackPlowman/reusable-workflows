@@ -26,7 +26,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Check Markdown links
-        uses: UmbrellaDocs/action-linkspector@e2ccef58c4b9eb89cd71ee23a8629744bba75aa6 # v1.3.5
+        uses: UmbrellaDocs/action-linkspector@3a951c1f0dca72300c2320d0eb39c2bafe429ab1 # v1.3.6
         with:
           github_token: ${{ secrets.workflow_github_token }}
           config_file: .github/other-configurations/.linkspector.yml
