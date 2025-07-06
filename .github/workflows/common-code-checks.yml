@@ -49,25 +49,6 @@ jobs:
       - name: Check Justfile Format
         run: just format-check
 
-  run-zizmor:
-    name: Check GitHub Actions with zizmor
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      actions: read
-      security-events: write
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-        with:
-          fetch-depth: 0
-          persist-credentials: false
-      - name: Run zizmor 🌈
-        uses: zizmorcore/zizmor-action@f52a838cfabf134edcbaa7c8b3677dde20045018 # v0.1.1
-        with:
-          persona: auditor
-          version: 1.11.0
-
   lefthook-validate:
     name: Lefthook Validate
     runs-on: ubuntu-latest
@@ -103,6 +84,25 @@ jobs:
         uses: suzuki-shunsuke/pinact-action@49cbd6acd0dbab6a6be2585d1dbdaa43b4410133 # v1.0.0
         with:
           skip_push: "true"
+
+  run-zizmor:
+    name: Check GitHub Actions with zizmor
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+      security-events: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Run zizmor 🌈
+        uses: zizmorcore/zizmor-action@f52a838cfabf134edcbaa7c8b3677dde20045018 # v0.1.1
+        with:
+          persona: auditor
+          version: 1.11.0
 
   run-actionlint:
     name: Check GitHub Actions with Actionlint
