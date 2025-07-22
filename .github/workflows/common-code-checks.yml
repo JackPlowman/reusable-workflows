@@ -131,6 +131,17 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Scan current project
+        id: scan
+        uses: anchore/scan-action@df395807f4554463d4455b8047cf58e37b6acaae # v6.5.0
+        with:
+          path: "."
+        continue-on-error: true
+      - name: upload Anchore scan SARIF report
+        uses: github/codeql-action/upload-sarif@d6bbdef45e766d081b84a2def353b0055f728d3e # v3.29.3
+
+        with:
+          sarif_file: ${{ steps.scan.outputs.sarif }}
+      - name: Scan current project
         uses: anchore/scan-action@df395807f4554463d4455b8047cf58e37b6acaae # v6.5.0
         with:
           path: "."
