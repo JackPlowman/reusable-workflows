@@ -191,4 +191,4 @@ jobs:
       - name: Run EditorConfig Checker
         uses: docker://mstruebing/editorconfig-checker:v3.3.0 # zizmor: ignore[unpinned-uses]
         with:
-          args: editorconfig-checker -color -format=github -dry-run
+          args: editorconfig-checker -color -format=github-actions -dry-run
