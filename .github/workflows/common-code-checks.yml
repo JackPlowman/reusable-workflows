@@ -132,7 +132,7 @@ jobs:
           persist-credentials: false
       - name: Scan current project
         id: scan
-        uses: anchore/scan-action@df395807f4554463d4455b8047cf58e37b6acaae # v6.5.0
+        uses: anchore/scan-action@1638637db639e0ade3258b51db49a9a137574c3e # v6.5.1
         with:
           path: "."
         continue-on-error: true
@@ -141,7 +141,7 @@ jobs:
         with:
           sarif_file: ${{ steps.scan.outputs.sarif }}
       - name: Scan current project
-        uses: anchore/scan-action@df395807f4554463d4455b8047cf58e37b6acaae # v6.5.0
+        uses: anchore/scan-action@1638637db639e0ade3258b51db49a9a137574c3e # v6.5.1
         with:
           path: "."
 
@@ -175,7 +175,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Secret Scanning
-        uses: trufflesecurity/trufflehog@a05cf0859455b5b16317ee22d809887a4043cdf0 # v3.90.2
+        uses: trufflesecurity/trufflehog@ed6d045b46642d0d94a60bdf9b1246aefbcf3d35 # v3.90.3
         with:
           extra_args: --results=verified,unknown
 
