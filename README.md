@@ -80,14 +80,19 @@ The `common-code-checks.yml` workflow provides comprehensive code quality and se
 
 Advanced security analysis supporting multiple programming languages:
 
-```yaml
-strategy:
-  matrix:
-    language: [javascript, python, go, java]
-uses: JackPlowman/reusable-workflows/.github/workflows/codeql-analysis.yml@main
-with:
-  language: ${{ matrix.language }}
-```
+jobs:
+  codeql-analysis:
+    name: CodeQL Analysis
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+    strategy:
+      matrix:
+        language: [javascript, python, go, java]
+    uses: JackPlowman/reusable-workflows/.github/workflows/codeql-analysis.yml@main
+    with:
+      language: ${{ matrix.language }}
 
 ### Pull Request Tasks
 
