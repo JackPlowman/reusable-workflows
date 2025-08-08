@@ -124,12 +124,7 @@ secrets:
 
 ## Contributing
 
-We welcome contributions to improve these workflows! Please read the [Contributing Guidelines](docs/CONTRIBUTING.md) for more information on:
-
-- How to propose new workflows
-- Testing procedures
-- Code style guidelines
-- Submitting pull requests
+We welcome contributions to improve these workflows! Please read the [Contributing Guidelines](docs/CONTRIBUTING.md) for more information.
 
 ## Licence
 
