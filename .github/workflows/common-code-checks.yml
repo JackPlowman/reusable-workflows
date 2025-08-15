@@ -102,7 +102,7 @@ jobs:
         uses: zizmorcore/zizmor-action@5ca5fc7a4779c5263a3ffa0e1f693009994446d1 # v0.1.2
         with:
           persona: auditor
-          version: 1.12.0
+          version: 1.12.1
 
   run-actionlint:
     name: Check GitHub Actions with Actionlint
