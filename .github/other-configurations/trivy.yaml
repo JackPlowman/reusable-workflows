@@ -1,4 +1,3 @@
-$schema: "https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/schema/trivy-config-schema.json"
 timeout: 10m
 dependency-tree: true
 list-all-pkgs: true
