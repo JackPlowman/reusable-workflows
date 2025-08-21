@@ -206,7 +206,7 @@ jobs:
         uses: karancode/yamllint-github-action@4052d365f09b8d34eb552c363d1141fd60e2aeb2 # v3.0.0
         with:
           yamllint_file_or_dir: "."
-          yamllint_config_filepath: ".github/super-linter-configurations/.yaml-lint.yml"
+          yamllint_config_filepath: ".github/other-configurations/.yaml-lint.yml"
           yamllint_strict: true
           yamllint_comment: true
         env:
