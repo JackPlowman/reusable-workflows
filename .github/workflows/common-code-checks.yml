@@ -29,7 +29,7 @@ jobs:
         uses: UmbrellaDocs/action-linkspector@874d01cae9fd488e3077b08952093235bd626977 # v1.3.7
         with:
           github_token: ${{ secrets.workflow_github_token }}
-          config_file: .github/other-configurations/.linkspector.yml
+          config_file: .github/tool-configurations/.linkspector.yml
           reporter: github-pr-review
           fail_on_error: true
           filter_mode: nofilter
@@ -73,14 +73,14 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Check actions are pinned (with config)
-        if: ${{ hashFiles('.github/other-configurations/pinact.yml') != '' }}
+        if: ${{ hashFiles('.github/tool-configurations/pinact.yml') != '' }}
         uses: suzuki-shunsuke/pinact-action@49cbd6acd0dbab6a6be2585d1dbdaa43b4410133 # v1.0.0
         with:
           skip_push: "true"
         env:
-          PINACT_CONFIG: .github/other-configurations/pinact.yml
+          PINACT_CONFIG: .github/tool-configurations/pinact.yml
       - name: Check actions are pinned (without config)
-        if: ${{ hashFiles('.github/other-configurations/pinact.yml') == '' }}
+        if: ${{ hashFiles('.github/tool-configurations/pinact.yml') == '' }}
         uses: suzuki-shunsuke/pinact-action@49cbd6acd0dbab6a6be2585d1dbdaa43b4410133 # v1.0.0
         with:
           skip_push: "true"
@@ -206,7 +206,7 @@ jobs:
         uses: karancode/yamllint-github-action@4052d365f09b8d34eb552c363d1141fd60e2aeb2 # v3.0.0
         with:
           yamllint_file_or_dir: "."
-          yamllint_config_filepath: ".github/other-configurations/.yaml-lint.yml"
+          yamllint_config_filepath: ".github/tool-configurations/.yaml-lint.yml"
           yamllint_strict: true
           yamllint_comment: true
         env:
@@ -224,7 +224,7 @@ jobs:
       - name: Run Markdownlint
         uses: DavidAnson/markdownlint-cli2-action@992badcdf24e3b8eb7e87ff9287fe931bcb00c6e # v20
         with:
-          config: ".github/other-configurations/.markdownlint-cli2.jsonc"
+          config: ".github/tool-configurations/.markdownlint-cli2.jsonc"
           globs: |
             README
             *.md
@@ -263,4 +263,4 @@ jobs:
           scan-type: "fs"
           scan-ref: "."
           scanners: vuln,secret,misconfig,license
-          trivy-config: .github/other-configurations/trivy.yaml
+          trivy-config: .github/tool-configurations/trivy.yaml
