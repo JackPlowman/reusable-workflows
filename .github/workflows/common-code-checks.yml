@@ -211,3 +211,20 @@ jobs:
           yamllint_comment: true
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.workflow_github_token }}
+
+  run-markdownlint:
+    name: "Check Markdown Files with Markdownlint"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: DavidAnson/markdownlint-cli2-action@v20
+        with:
+          config: '.github/other-configurations/.markdown-lint.yml'
+          globs: |
+            README
+            *.md
+            **/*.md
