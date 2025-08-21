@@ -263,4 +263,4 @@ jobs:
           scan-type: 'fs'
           scan-ref: '.'
           scanners: vuln,secret,misconfig,license
-          trivy-config: trivy.yaml
+          trivy-config: .github/other-configurations/trivy.yaml
