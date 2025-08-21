@@ -27,4 +27,4 @@ jobs:
         with:
           token: ${{ secrets.workflow_github_token }}
           repository: ${{ github.repository }}
-          manifest: .github/other-configurations/labels.yml
+          manifest: .github/tool-configurations/labels.yml

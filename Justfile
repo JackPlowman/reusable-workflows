@@ -58,7 +58,7 @@ actionlint-check:
 # Pinact
 # ------------------------------------------------------------------------------
 
-export pinact_config := "-c .github/other-configurations/pinact.yml"
+export pinact_config := "-c .github/tool-configurations/pinact.yml"
 
 # Run pinact
 pinact-run:
