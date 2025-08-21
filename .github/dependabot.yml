@@ -8,9 +8,3 @@ updates:
       cronjob: "30 7 * * *"
       timezone: "Europe/London"
     target-branch: "main"
-  - package-ecosystem: "docker"
-    directory: "/"
-    schedule:
-      interval: "cron"
-      cronjob: "30 7 * * *"
-      timezone: "Europe/London"
