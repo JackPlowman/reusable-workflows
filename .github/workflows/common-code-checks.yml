@@ -249,7 +249,7 @@ jobs:
         run: just prettier-check
 
   run-trivy:
-    name: "Check Container Images for Vulnerabilities with Trivy"
+    name: "Check Vulnerabilities, Secrets, Misconfigurations, and Licenses with Trivy"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
