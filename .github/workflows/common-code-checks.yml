@@ -262,4 +262,4 @@ jobs:
         with:
           scan-type: "fs"
           scan-ref: "."
-          trivy-config: .github/tool-configurations/trivy.yaml
+          trivy-config: .github/tool-configurations/trivy.yml
