@@ -4,6 +4,10 @@
 
 This repository contains reusable GitHub Actions workflows designed for consistent code quality, security scanning, and CI/CD automation across multiple projects. Workflows are called from other repositories using `workflow_call`.
 
+## Language Conventions
+
+Always use English (British) spelling and terminology unless necessary.
+
 ## Architecture Patterns
 
 ### Workflow Structure
