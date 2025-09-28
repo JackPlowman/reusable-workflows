@@ -160,6 +160,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
           GITLEAKS_ENABLE_UPLOAD_ARTIFACT: "true"
+          GITLEAKS_NOTIFY_USER_LIST: "@JackPlowman"
+      - name: LS
+        run: ls -la
 
   run-trufflehog:
     name: Check for Secrets with TruffleHog
