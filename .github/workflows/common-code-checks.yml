@@ -18,7 +18,7 @@ jobs:
     name: Check Markdown links
     runs-on: ubuntu-latest
     permissions:
-      pull-requests: write
+      pull-requests: write # to create PR review comments
     steps:
       - name: Checkout Repository
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
@@ -89,9 +89,8 @@ jobs:
     name: Check GitHub Actions with zizmor
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      actions: read
-      security-events: write
+      actions: read  # to read actions
+      security-events: write # to create secret scanning alerts
     steps:
       - name: Checkout Repository
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
@@ -250,8 +249,7 @@ jobs:
     name: "Check Vulnerabilities, Secrets, Misconfigurations, and Licenses with Trivy"
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-      security-events: write
+      security-events: write # to create secret scanning alerts
     steps:
       - name: Checkout Repository
         uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
