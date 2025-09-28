@@ -263,8 +263,8 @@ jobs:
           scan-type: "fs"
           scan-ref: "."
           trivy-config: .github/tool-configurations/trivy.yml
-          format: 'sarif'
-          output: 'trivy-results.sarif'
+          format: "sarif"
+          output: "trivy-results.sarif"
       - name: Upload Trivy SARIF report
         uses: github/codeql-action/upload-sarif@3599b3baa15b485a2e49ef411a7a4bb2452e7f93 # v3.30.5
         with:
