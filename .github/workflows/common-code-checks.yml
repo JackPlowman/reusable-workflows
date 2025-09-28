@@ -89,7 +89,7 @@ jobs:
     name: Check GitHub Actions with zizmor
     runs-on: ubuntu-latest
     permissions:
-      actions: read  # to read actions
+      actions: read # to read actions
       security-events: write # to create secret scanning alerts
     steps:
       - name: Checkout Repository
