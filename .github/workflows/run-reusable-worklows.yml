@@ -12,8 +12,9 @@ jobs:
     name: Common Code Checks
     permissions:
       contents: read
-      pull-requests: write
-      security-events: write
+      actions: read # Allow the workflow to read actions metadata
+      pull-requests: write # Allow the workflow to create and modify pull request comments
+      security-events: write # Allow the workflow to upload analysis results
     uses: JackPlowman/reusable-workflows/.github/workflows/common-code-checks.yml@main
     secrets:
       workflow_github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -30,7 +31,7 @@ jobs:
     name: Common Sync Labels
     permissions:
       contents: read
-      pull-requests: write
+      pull-requests: write # For writing labels to the repository
     uses: JackPlowman/reusable-workflows/.github/workflows/common-sync-labels.yml@main
     secrets:
       workflow_github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -39,7 +40,7 @@ jobs:
     name: CodeQL Analysis
     permissions:
       contents: read
-      security-events: write
+      security-events: write # Allow the workflow to upload analysis results
     strategy:
       matrix:
         language: [actions]
