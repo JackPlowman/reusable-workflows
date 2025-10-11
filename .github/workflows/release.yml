@@ -16,7 +16,7 @@ jobs:
     name: Create Release
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write # to create releases
 
     steps:
       - name: Checkout Repository

@@ -15,7 +15,7 @@ jobs:
     name: Configure Labels
     permissions:
       contents: read
-      pull-requests: write
+      pull-requests: write # For writing labels to the repository
     uses: ./.github/workflows/common-sync-labels.yml
     secrets:
       workflow_github_token: ${{ secrets.GITHUB_TOKEN }}
