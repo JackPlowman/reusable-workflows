@@ -59,7 +59,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Install the latest version of uv
-        uses: astral-sh/setup-uv@d0cc045d04ccac9d8b7881df0226f9e82c39688e # v6.8.0
+        uses: astral-sh/setup-uv@eb1897b8dc4b5d5bfe39a428a8f2304605e0983c # v7.0.0
       - name: Run Lefthook Validate
         run: uvx lefthook validate
 
@@ -192,7 +192,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Run EditorConfig Checker
-        uses: docker://mstruebing/editorconfig-checker:v3.4.0 # zizmor: ignore[unpinned-uses]
+        uses: docker://mstruebing/editorconfig-checker:v3.4.1 # zizmor: ignore[unpinned-uses]
         with:
           args: editorconfig-checker -color -format=github-actions
 
