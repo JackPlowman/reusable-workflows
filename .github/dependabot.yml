@@ -8,3 +8,5 @@ updates:
       cronjob: "30 7 * * *"
       timezone: "Europe/London"
     target-branch: "main"
+    cooldown:
+      default-days: 7
