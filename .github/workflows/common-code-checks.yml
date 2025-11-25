@@ -192,7 +192,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Run EditorConfig Checker
-        uses: docker://mstruebing/editorconfig-checker:v3.5.0 # zizmor: ignore[unpinned-uses]
+        uses: docker://mstruebing/editorconfig-checker:v3.6.0 # zizmor: ignore[unpinned-uses]
         with:
           args: editorconfig-checker -color -format=github-actions
 
