@@ -12,34 +12,6 @@ permissions:
   contents: read
 
 jobs:
-  common-code-checks:
-    name: Common Code Checks
-    permissions:
-      contents: read
-      actions: read # Allow the workflow to read actions metadata
-      pull-requests: write # Allow the workflow to create and modify pull request comments
-      security-events: write # Allow the workflow to upload analysis results
-    uses: JackPlowman/reusable-workflows/.github/workflows/common-code-checks.yml@main
-    secrets:
-      workflow_github_token: ${{ secrets.GITHUB_TOKEN }}
-
-  common-clean-caches:
-    name: Common Clean Caches
-    permissions:
-      contents: read
-    uses: JackPlowman/reusable-workflows/.github/workflows/common-clean-caches.yml@main
-    secrets:
-      workflow_github_token: ${{ secrets.GH_TOKEN }}
-
-  common-sync-labels:
-    name: Common Sync Labels
-    permissions:
-      contents: read
-      pull-requests: write # For writing labels to the repository
-    uses: JackPlowman/reusable-workflows/.github/workflows/common-sync-labels.yml@main
-    secrets:
-      workflow_github_token: ${{ secrets.GITHUB_TOKEN }}
-
   codeql-checks:
     name: CodeQL Analysis
     permissions:
@@ -51,3 +23,31 @@ jobs:
     uses: JackPlowman/reusable-workflows/.github/workflows/codeql-analysis.yml@main
     with:
       language: ${{ matrix.language }}
+
+  common-clean-caches:
+    name: Common Clean Caches
+    permissions:
+      contents: read
+    uses: JackPlowman/reusable-workflows/.github/workflows/common-clean-caches.yml@main
+    secrets:
+      workflow_github_token: ${{ secrets.GH_TOKEN }}
+
+  common-code-checks:
+    name: Common Code Checks
+    permissions:
+      contents: read
+      actions: read # Allow the workflow to read actions metadata
+      pull-requests: write # Allow the workflow to create and modify pull request comments
+      security-events: write # Allow the workflow to upload analysis results
+    uses: JackPlowman/reusable-workflows/.github/workflows/common-code-checks.yml@main
+    secrets:
+      workflow_github_token: ${{ secrets.GITHUB_TOKEN }}
+
+  common-sync-labels:
+    name: Common Sync Labels
+    permissions:
+      contents: read
+      pull-requests: write # For writing labels to the repository
+    uses: JackPlowman/reusable-workflows/.github/workflows/common-sync-labels.yml@main
+    secrets:
+      workflow_github_token: ${{ secrets.GITHUB_TOKEN }}
