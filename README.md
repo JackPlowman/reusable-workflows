@@ -22,7 +22,7 @@ A comprehensive collection of reusable GitHub Actions workflows for various deve
 
 - **`common-code-checks.yml`** - Comprehensive code quality and security scanning
 - **`codeql-analysis.yml`** - GitHub CodeQL security analysis for multiple languages
-- **`common-pull-request-tasks.yml`** - Automated PR labeling, sizing, and dependency review
+- **`common-pull-request-tasks.yml`** - Automated PR labelling, sizing, and dependency review
 - **`common-clean-caches.yml`** - Automated GitHub Actions cache cleanup
 - **`common-sync-labels.yml`** - Repository label synchronization and management
 
@@ -100,8 +100,8 @@ jobs:
 
 Automated PR management including:
 
-- **Smart Labeling** - Automatically labels PRs based on changed files
-- **Size Labeling** - Adds size labels (XS, S, M, L, XL, XXL) based on changes
+- **Smart Labelling** - Automatically labels PRs based on changed files
+- **Size Labelling** - Adds size labels (XS, S, M, L, XL, XXL) based on changes
 - **Dependency Review** - Security analysis of dependency changes
 
 ### Cache Management

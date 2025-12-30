@@ -70,7 +70,7 @@ ignore_actions:
 **Workflow Pinning Pattern**:
 
 ```yaml
-uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
 ```
 
 ## Key Files and Directories
@@ -78,7 +78,7 @@ uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 - `.github/workflows/` - Reusable workflow definitions
 - `.github/tool-configurations/` - Configuration files for linting/security tools
 - `Justfile` - Local development command orchestration
-- `lefthook.yml` - Git hook configuration
+- `.pre-commit-config.yaml` - Pre-commit configuration (validated/run via `prek`)
 
 ## Integration Patterns
 
@@ -116,5 +116,4 @@ permissions:
 2. **Conditional Execution**: Check for config file existence before running tools
 3. **Parallel Jobs**: Security scans run in parallel for efficiency
 4. **Fetch Depth**: Use `fetch-depth: 0` for complete git history access
-5. **Color Output**: Set `FORCE_COLOR: 1` environment variable for consistent terminal colors</content>
-   <parameter name="filePath">/Users/jackplowman/projects/Personal/reusable-workflows/.github/copilot-instructions.md
+5. **Colour Output**: Set `FORCE_COLOR: 1` environment variable for consistent terminal colours
