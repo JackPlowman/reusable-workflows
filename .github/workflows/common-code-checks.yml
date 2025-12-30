@@ -49,8 +49,8 @@ jobs:
       - name: Check Justfile Format
         run: just format-check
 
-  lefthook-validate:
-    name: Lefthook Validate
+  prek-check:
+    name: Prek Check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -58,10 +58,15 @@ jobs:
         with:
           fetch-depth: 0
           persist-credentials: false
-      - name: Install the latest version of uv
-        uses: astral-sh/setup-uv@681c641aba71e4a1c380be3ab5e12ad51f415867 # v7.1.6
-      - name: Run Lefthook Validate
-        run: uvx lefthook validate
+      - name: Set up Just
+        uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3.0.0
+      - name: Run Prek Action
+        uses: j178/prek-action@91fd7d7cf70ae1dee9f4f44e7dfa5d1073fe6623 # v1.0.11
+        with:
+          prek-version: "0.2.25"
+          install-only: "true"
+      - name: Prek Check
+        run: just prek-check
 
   pinact-check:
     name: Pinact Check
