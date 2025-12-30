@@ -68,6 +68,13 @@ repos:
         entry: pinact
         additional_dependencies:
           - github.com/suzuki-shunsuke/pinact/v3/cmd/pinact@v3.8.0
-        args: ["run", "--verify", "--check"]
+        args:
+          [
+            "run",
+            "-c",
+            ".github/tool-configurations/pinact.yml",
+            "--verify",
+            "--check",
+          ]
         files: "^\\.github/(workflows|actions)/.*\\.ya?ml$|(^|/)action\\.ya?ml$"
         pass_filenames: false
