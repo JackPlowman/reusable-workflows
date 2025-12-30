@@ -31,12 +31,12 @@ gitleaks-detect:
     gitleaks detect --source .
 
 # ------------------------------------------------------------------------------
-# Lefthook
+# Prek
 # ------------------------------------------------------------------------------
 
-# Validate lefthook config
-lefthook-validate:
-    lefthook validate
+# Run prek checking on all pre-commit config files
+prek-check:
+    find . -name "pre-commit-config.*" -exec prek validate-config -c {} \;
 
 # ------------------------------------------------------------------------------
 # Zizmor
@@ -58,19 +58,17 @@ actionlint-check:
 # Pinact
 # ------------------------------------------------------------------------------
 
-export pinact_config := "-c .github/tool-configurations/pinact.yml"
-
 # Run pinact
 pinact-run:
-    pinact run ${pinact_config}
+    pinact run
 
 # Run pinact checking
 pinact-check:
-    pinact run ${pinact_config} --verify --check
+    pinact run --verify --check
 
 # Run pinact update
 pinact-update:
-    pinact run ${pinact_config} --update
+    pinact run --update
 
 # ------------------------------------------------------------------------------
 # EditorConfig
@@ -86,4 +84,4 @@ editorconfig-check:
 
 # Install pre commit hook to run on all commits
 install-git-hooks:
-    lefthook install -f
+    pre-commit install
