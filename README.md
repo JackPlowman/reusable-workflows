@@ -65,7 +65,7 @@ The `common-code-checks.yml` workflow provides comprehensive code quality and se
 
 - **Markdown Link Validation** - Checks for broken links in documentation
 - **Justfile Format Checking** - Validates Just command file formatting
-- **Lefthook Validation** - Validates Git hook configurations
+- **Prek Check** - Validates Prek Git hooks configuration
 - **Security Scanning**:
   - Pinact - Ensures GitHub Actions are pinned to specific versions
   - Zizmor - GitHub Actions security analysis

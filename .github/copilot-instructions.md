@@ -29,21 +29,21 @@ Always use English (British) spelling and terminology unless necessary.
 
 ```bash
 # Format code and check formatting
-just prettier-check          # Check Prettier formatting
-just prettier-format         # Apply Prettier formatting
+just prettier-check        # Check Prettier formatting
+just prettier-format       # Apply Prettier formatting
 
 # Justfile management
-just format                  # Format Justfile
-just format-check           # Check Justfile formatting
+just format                # Format Justfile
+just format-check          # Check Justfile formatting
 
 # Security checks
-just gitleaks-detect        # Run secret detection
+just gitleaks-detect       # Run secret detection
 just zizmor-check          # Check GitHub Actions security
 just actionlint-check      # Lint workflow files
 
 # Git hooks
-just install-git-hooks      # Install pre-commit hooks
-just lefthook-validate     # Validate lefthook configuration
+just install-git-hooks     # Install pre-commit hooks
+just prek-check            # Validate prek configuration
 ```
 
 ### Pre-commit Hooks
@@ -53,7 +53,7 @@ Automatic checks run on every commit:
 - Secret detection (gitleaks)
 - Code formatting (prettier)
 - Justfile formatting
-- Lefthook validation
+- Prek Check
 - GitHub Actions security (zizmor)
 - Workflow linting (actionlint)
 
