@@ -58,17 +58,19 @@ actionlint-check:
 # Pinact
 # ------------------------------------------------------------------------------
 
+export pinact_config := "-c .github/tool-configurations/pinact.yml"
+
 # Run pinact
 pinact-run:
-    pinact run
+    pinact run ${pinact_config}
 
 # Run pinact checking
 pinact-check:
-    pinact run --verify --check
+    pinact run ${pinact_config} --verify --check
 
 # Run pinact update
 pinact-update:
-    pinact run --update
+    pinact run ${pinact_config} --update
 
 # ------------------------------------------------------------------------------
 # EditorConfig
