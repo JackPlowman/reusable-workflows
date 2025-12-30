@@ -50,7 +50,7 @@ jobs:
         run: just format-check
 
   prek-check:
-    name: Prek Check
+    name: "Validate Prek Git Hooks Configuration"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -255,6 +255,22 @@ jobs:
         uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3.0.0
       - name: Check Code Formatting with Prettier
         run: just prettier-check
+
+  run-prek:
+    name: "Run Prek pre-commit hook checks"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Set up Just
+        uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3.0.0
+      - name: Run Prek Action
+        uses: j178/prek-action@91fd7d7cf70ae1dee9f4f44e7dfa5d1073fe6623 # v1.0.11
+        with:
+          prek-version: "0.2.25"
 
   run-trivy:
     name: "Check Vulnerabilities, Secrets, Misconfigurations, and Licenses with Trivy"
