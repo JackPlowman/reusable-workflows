@@ -113,8 +113,9 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Run Actionlint
-        uses: docker://rhysd/actionlint:1.7.10
-         # zizmor: ignore[unpinned-uses]
+        uses:
+          docker://rhysd/actionlint:1.7.10
+          # zizmor: ignore[unpinned-uses]
         with:
           args: -color
 
