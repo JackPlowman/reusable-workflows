@@ -8,6 +8,8 @@ on:
         description: "Language to analyse"
         type: string
 
+# zizmor: ignore[concurrency-limits] only GitHub can trigger this workflow
+
 permissions:
   contents: read
 
