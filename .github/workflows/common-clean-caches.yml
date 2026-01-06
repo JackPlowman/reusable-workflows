@@ -7,6 +7,8 @@ on:
         required: true
         description: "GitHub token for workflow"
 
+# zizmor: ignore[concurrency-limits] only GitHub can trigger this workflow
+
 permissions: {}
 
 jobs:
