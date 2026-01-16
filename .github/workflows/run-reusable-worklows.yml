@@ -20,7 +20,7 @@ jobs:
     strategy:
       matrix:
         language: [actions]
-    uses: JackPlowman/reusable-workflows/.github/workflows/codeql-analysis.yml@main
+    uses: JackPlowman/reusable-workflows/.github/workflows/codeql-analysis.yml@main # zizmor: ignore[unpinned-uses]
     with:
       language: ${{ matrix.language }}
 
@@ -28,7 +28,7 @@ jobs:
     name: Common Clean Caches
     permissions:
       contents: read
-    uses: JackPlowman/reusable-workflows/.github/workflows/common-clean-caches.yml@main
+    uses: JackPlowman/reusable-workflows/.github/workflows/common-clean-caches.yml@main # zizmor: ignore[unpinned-uses]
     secrets:
       workflow_github_token: ${{ secrets.GH_TOKEN }}
 
@@ -39,7 +39,7 @@ jobs:
       actions: read # Allow the workflow to read actions metadata
       pull-requests: write # Allow the workflow to create and modify pull request comments
       security-events: write # Allow the workflow to upload analysis results
-    uses: JackPlowman/reusable-workflows/.github/workflows/common-code-checks.yml@main
+    uses: JackPlowman/reusable-workflows/.github/workflows/common-code-checks.yml@main # zizmor: ignore[unpinned-uses]
     secrets:
       workflow_github_token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -48,6 +48,6 @@ jobs:
     permissions:
       contents: read
       pull-requests: write # For writing labels to the repository
-    uses: JackPlowman/reusable-workflows/.github/workflows/common-sync-labels.yml@main
+    uses: JackPlowman/reusable-workflows/.github/workflows/common-sync-labels.yml@main # zizmor: ignore[unpinned-uses]
     secrets:
       workflow_github_token: ${{ secrets.GITHUB_TOKEN }}
