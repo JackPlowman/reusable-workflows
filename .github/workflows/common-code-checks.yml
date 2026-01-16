@@ -87,7 +87,7 @@ jobs:
       - name: Run Prek Action
         uses: j178/prek-action@9d6a3097e0c1865ecce00cfb89fe80f2ee91b547 # v1.0.12
         with:
-          prek-version: "0.2.25"
+          prek-version: "0.2.28"
           install-only: "true"
       - name: Prek Check
         run: just prek-check
@@ -296,4 +296,4 @@ jobs:
         uses: zizmorcore/zizmor-action@e639db99335bc9038abc0e066dfcd72e23d26fb4 # v0.3.0
         with:
           persona: auditor
-          version: 1.20.0
+          version: 1.21.0
