@@ -87,7 +87,7 @@ jobs:
       - name: Run Prek Action
         uses: j178/prek-action@9d6a3097e0c1865ecce00cfb89fe80f2ee91b547 # v1.0.12
         with:
-          prek-version: "0.2.28"
+          prek-version: "0.2.29"
           install-only: "true"
       - name: Prek Check
         run: just prek-check
@@ -201,7 +201,7 @@ jobs:
       - name: Run Prek Action
         uses: j178/prek-action@9d6a3097e0c1865ecce00cfb89fe80f2ee91b547 # v1.0.12
         with:
-          prek-version: "0.2.25"
+          prek-version: "0.2.29"
 
   run-prettier:
     name: "Check Code Formatting with Prettier"
@@ -215,7 +215,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
       - name: Install Prettier
-        run: npm install -g prettier@3.7.4
+        run: npm install -g prettier@3.8.0
       - name: Set up Just
         uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3.0.0
       - name: Check Code Formatting with Prettier
