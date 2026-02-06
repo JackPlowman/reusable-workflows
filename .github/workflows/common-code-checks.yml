@@ -87,7 +87,7 @@ jobs:
       - name: Run Prek Action
         uses: j178/prek-action@0bb87d7f00b0c99306c8bcb8b8beba1eb581c037 # v1.1.1
         with:
-          prek-version: "0.3.0"
+          prek-version: "0.3.2"
           install-only: "true"
       - name: Prek Check
         run: just prek-check
@@ -201,7 +201,7 @@ jobs:
       - name: Run Prek Action
         uses: j178/prek-action@0bb87d7f00b0c99306c8bcb8b8beba1eb581c037 # v1.1.1
         with:
-          prek-version: "0.3.0"
+          prek-version: "0.3.2"
 
   run-prettier:
     name: "Check Code Formatting with Prettier"
