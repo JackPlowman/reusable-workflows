@@ -85,7 +85,7 @@ jobs:
       - name: Set up Just
         uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3.0.0
       - name: Run Prek Action
-        uses: j178/prek-action@564dda4cfa5e96aafdc4a5696c4bf7b46baae5ac # v1.1.0
+        uses: j178/prek-action@0bb87d7f00b0c99306c8bcb8b8beba1eb581c037 # v1.1.1
         with:
           prek-version: "0.3.0"
           install-only: "true"
@@ -139,7 +139,7 @@ jobs:
           GITLEAKS_ENABLE_UPLOAD_ARTIFACT: "true"
           GITLEAKS_NOTIFY_USER_LIST: "@JackPlowman"
       - name: Upload Anchore scan SARIF report
-        uses: github/codeql-action/upload-sarif@6bc82e05fd0ea64601dd4b465378bbcf57de0314 # v4.32.1
+        uses: github/codeql-action/upload-sarif@45cbd0c69e560cd9e7cd7f8c32362050c9b7ded2 # v4.32.2
         with:
           sarif_file: results.sarif
 
@@ -161,7 +161,7 @@ jobs:
           path: "."
         continue-on-error: true
       - name: Upload Anchore scan SARIF report
-        uses: github/codeql-action/upload-sarif@6bc82e05fd0ea64601dd4b465378bbcf57de0314 # v4.32.1
+        uses: github/codeql-action/upload-sarif@45cbd0c69e560cd9e7cd7f8c32362050c9b7ded2 # v4.32.2
         with:
           sarif_file: ${{ steps.scan.outputs.sarif }}
       - name: Scan current project
@@ -199,7 +199,7 @@ jobs:
       - name: Set up Just
         uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3.0.0
       - name: Run Prek Action
-        uses: j178/prek-action@564dda4cfa5e96aafdc4a5696c4bf7b46baae5ac # v1.1.0
+        uses: j178/prek-action@0bb87d7f00b0c99306c8bcb8b8beba1eb581c037 # v1.1.1
         with:
           prek-version: "0.3.0"
 
@@ -241,7 +241,7 @@ jobs:
           format: "sarif"
           output: "trivy-results.sarif"
       - name: Upload Trivy SARIF report
-        uses: github/codeql-action/upload-sarif@6bc82e05fd0ea64601dd4b465378bbcf57de0314 # v4.32.1
+        uses: github/codeql-action/upload-sarif@45cbd0c69e560cd9e7cd7f8c32362050c9b7ded2 # v4.32.2
         with:
           sarif_file: trivy-results.sarif
 
@@ -257,7 +257,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Secret Scanning
-        uses: trufflesecurity/trufflehog@7f4e37db2d928c18ddd7ddf0604f8f7d1f5793ec # v3.93.0
+        uses: trufflesecurity/trufflehog@7635b24fd512a2e817dd3e9dd661caaf035a079d # v3.93.1
         with:
           extra_args: --results=verified,unknown
 
