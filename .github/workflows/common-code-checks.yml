@@ -139,7 +139,7 @@ jobs:
           GITLEAKS_ENABLE_UPLOAD_ARTIFACT: "true"
           GITLEAKS_NOTIFY_USER_LIST: "@JackPlowman"
       - name: Upload Anchore scan SARIF report
-        uses: github/codeql-action/upload-sarif@89a39a4e59826350b863aa6b6252a07ad50cf83e # v4.32.4
+        uses: github/codeql-action/upload-sarif@c793b717bc78562f491db7b0e93a3a178b099162 # v4.32.5
         with:
           sarif_file: results.sarif
 
@@ -161,7 +161,7 @@ jobs:
           path: "."
         continue-on-error: true
       - name: Upload Anchore scan SARIF report
-        uses: github/codeql-action/upload-sarif@89a39a4e59826350b863aa6b6252a07ad50cf83e # v4.32.4
+        uses: github/codeql-action/upload-sarif@c793b717bc78562f491db7b0e93a3a178b099162 # v4.32.5
         with:
           sarif_file: ${{ steps.scan.outputs.sarif }}
       - name: Scan current project
@@ -213,7 +213,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Setup Node.js environment
-        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6.2.0
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
       - name: Install Prettier
         run: npm install -g prettier@3.8.1
       - name: Set up Just
@@ -233,7 +233,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Run Trivy vulnerability scanner in fs mode
-        uses: aquasecurity/trivy-action@e368e328979b113139d6f9068e03accaed98a518 # 0.34.1
+        uses: aquasecurity/trivy-action@97e0b3872f55f89b95b2f65b3dbab56962816478 # 0.34.2
         with:
           scan-type: "fs"
           scan-ref: "."
@@ -241,7 +241,7 @@ jobs:
           format: "sarif"
           output: "trivy-results.sarif"
       - name: Upload Trivy SARIF report
-        uses: github/codeql-action/upload-sarif@89a39a4e59826350b863aa6b6252a07ad50cf83e # v4.32.4
+        uses: github/codeql-action/upload-sarif@c793b717bc78562f491db7b0e93a3a178b099162 # v4.32.5
         with:
           sarif_file: trivy-results.sarif
 
@@ -257,7 +257,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Secret Scanning
-        uses: trufflesecurity/trufflehog@041f07e9df901a1038a528e5525b0226d04dd5ea # v3.93.6
+        uses: trufflesecurity/trufflehog@c3e599b7163e8198a55467f3133db0e7b2a492cb # v3.93.7
         with:
           extra_args: --results=verified,unknown
 
