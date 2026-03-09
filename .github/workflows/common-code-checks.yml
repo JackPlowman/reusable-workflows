@@ -44,7 +44,7 @@ jobs:
       - name: Check Markdown links
         uses: UmbrellaDocs/action-linkspector@652f85bc57bb1e7d4327260decc10aa68f7694c3 # v1.4.0
         with:
-          github_token: ${{ secrets.workflow_github_token }}
+          github_token: ${{ secrets.workflow_github_token }} # zizmor: ignore[secrets-outside-env]
           config_file: .github/tool-configurations/.linkspector.yml
           reporter: github-pr-review
           fail_on_error: true
@@ -278,7 +278,7 @@ jobs:
           yamllint_strict: true
           yamllint_comment: true
         env:
-          GITHUB_ACCESS_TOKEN: ${{ secrets.workflow_github_token }}
+          GITHUB_ACCESS_TOKEN: ${{ secrets.workflow_github_token }} # zizmor: ignore[secrets-outside-env]
 
   run-zizmor:
     name: Check GitHub Actions with zizmor
@@ -293,7 +293,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Run zizmor 🌈
-        uses: zizmorcore/zizmor-action@0dce2577a4760a2749d8cfb7a84b7d5585ebcb7d # v0.5.0
+        uses: zizmorcore/zizmor-action@71321a20a9ded102f6e9ce5718a2fcec2c4f70d8 # v0.5.2
         with:
           persona: auditor
-          version: 1.23.0
+          version: 1.23.1
