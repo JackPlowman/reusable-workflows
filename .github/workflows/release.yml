@@ -30,7 +30,7 @@ jobs:
           persist-credentials: false
       - name: Generate release tag
         id: generate_release_tag
-        uses: amitsingh-007/next-release-tag@51b83001ac9dcfc25b2312fa63b60ac87a034006 # v6.4.0
+        uses: amitsingh-007/next-release-tag@ccca26be97e8a3e33f50ec71a42bdd596cbc249f # v6.5.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           tag_prefix: "v"
