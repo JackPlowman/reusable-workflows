@@ -139,7 +139,7 @@ jobs:
           GITLEAKS_ENABLE_UPLOAD_ARTIFACT: "true"
           GITLEAKS_NOTIFY_USER_LIST: "@JackPlowman"
       - name: Upload Anchore scan SARIF report
-        uses: github/codeql-action/upload-sarif@38697555549f1db7851b81482ff19f1fa5c4fedc # v4.34.1
+        uses: github/codeql-action/upload-sarif@c10b8064de6f491fea524254123dbe5e09572f13 # v4.35.1
         with:
           sarif_file: results.sarif
 
@@ -161,7 +161,7 @@ jobs:
           path: "."
         continue-on-error: true
       - name: Upload Anchore scan SARIF report
-        uses: github/codeql-action/upload-sarif@38697555549f1db7851b81482ff19f1fa5c4fedc # v4.34.1
+        uses: github/codeql-action/upload-sarif@c10b8064de6f491fea524254123dbe5e09572f13 # v4.35.1
         with:
           sarif_file: ${{ steps.scan.outputs.sarif }}
       - name: Scan current project
@@ -179,7 +179,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Run Markdownlint
-        uses: DavidAnson/markdownlint-cli2-action@07035fd053f7be764496c0f8d8f9f41f98305101 # v22.0.0
+        uses: DavidAnson/markdownlint-cli2-action@ce4853d43830c74c1753b39f3cf40f71c2031eb9 # v23.0.0
         with:
           config: ".github/tool-configurations/.markdownlint-cli2.jsonc"
           globs: |
@@ -242,7 +242,7 @@ jobs:
           output: "trivy-results.sarif"
           version: v0.69.3
       - name: Upload Trivy SARIF report
-        uses: github/codeql-action/upload-sarif@38697555549f1db7851b81482ff19f1fa5c4fedc # v4.34.1
+        uses: github/codeql-action/upload-sarif@c10b8064de6f491fea524254123dbe5e09572f13 # v4.35.1
         with:
           sarif_file: trivy-results.sarif
 
@@ -258,7 +258,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Secret Scanning
-        uses: trufflesecurity/trufflehog@6c64db94d5b2e09d7e0948fb6bd3166cc6fffbc7 # v3.94.0
+        uses: trufflesecurity/trufflehog@586f66d7886cd0b037c7c245d4a6e34ef357ab10 # v3.94.1
         with:
           extra_args: --results=verified,unknown
 
