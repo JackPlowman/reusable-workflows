@@ -85,7 +85,7 @@ jobs:
       - name: Set up Just
         uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3.1.0
       - name: Run Prek Action
-        uses: j178/prek-action@79f765515bd648eb4d6bb1b17277b7cb22cb6468 # v2.0.0
+        uses: j178/prek-action@53276d8b0d10f8b6672aa85b4588c6921d0370cc # v2.0.1
         with:
           prek-version: "0.3.5"
           install-only: "true"
@@ -199,7 +199,7 @@ jobs:
       - name: Set up Just
         uses: extractions/setup-just@e33e0265a09d6d736e2ee1e0eb685ef1de4669ff # v3.1.0
       - name: Run Prek Action
-        uses: j178/prek-action@79f765515bd648eb4d6bb1b17277b7cb22cb6468 # v2.0.0
+        uses: j178/prek-action@53276d8b0d10f8b6672aa85b4588c6921d0370cc # v2.0.1
         with:
           prek-version: "0.3.5"
 
