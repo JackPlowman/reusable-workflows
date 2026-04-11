@@ -215,7 +215,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v6.3.0
       - name: Install Prettier
-        run: npm install -g prettier@3.8.1
+        run: npm install -g prettier@3.8.2
       - name: Set up Just
         uses: extractions/setup-just@53165ef7e734c5c07cb06b3c8e7b647c5aa16db3 # v4
       - name: Check Code Formatting with Prettier
