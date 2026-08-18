@@ -33,7 +33,7 @@ repos:
         name: Actionlint
         description: Linter for GitHub Actions workflow files
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: bebfac867564fbd992e5b45379b4b0568d5cb85b # frozen: 3.6.1
+    rev: e8b4e28241a9ae8296ba6e4a491b5da4eda73283 # frozen: 3.11.1
     hooks:
       - id: editorconfig-checker
         name: EditorConfig Checker
