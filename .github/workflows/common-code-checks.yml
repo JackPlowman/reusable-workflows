@@ -42,7 +42,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Check Markdown links
-        uses: UmbrellaDocs/action-linkspector@6c637d70424624231467a4ca918be54fa3b792d0 # v1.5.4
+        uses: UmbrellaDocs/action-linkspector@568ec8d29fa92b31fd9ea5381e155c51e922af83 # v1.5.5
         with:
           github_token: ${{ secrets.workflow_github_token }} # zizmor: ignore[secrets-outside-env]
           config_file: .github/tool-configurations/.linkspector.yml
@@ -85,7 +85,7 @@ jobs:
       - name: Set up Just
         uses: extractions/setup-just@53165ef7e734c5c07cb06b3c8e7b647c5aa16db3 # v4.0.0
       - name: Run Prek Action
-        uses: j178/prek-action@5337cb91e0fa35a7ff31b9ca345126d8bbbcdf16 # v2.0.6
+        uses: j178/prek-action@4e14d07f9231acabce116ccfca13b13dd9755ece # v3.0.0
         with:
           prek-version: "0.4.8"
           install-only: "true"
@@ -139,7 +139,7 @@ jobs:
           GITLEAKS_ENABLE_UPLOAD_ARTIFACT: "true"
           GITLEAKS_NOTIFY_USER_LIST: "@JackPlowman"
       - name: Upload Anchore scan SARIF report
-        uses: github/codeql-action/upload-sarif@e4fba868fa4b1b91e1fdab776edc8cfbe6e9fb81 # v4.37.3
+        uses: github/codeql-action/upload-sarif@cdf488f595d80d6e07e03d4674febd5ab45fa938 # v4.37.9
         with:
           sarif_file: results.sarif
 
@@ -156,16 +156,16 @@ jobs:
           persist-credentials: false
       - name: Scan current project
         id: scan
-        uses: anchore/scan-action@e1165082ffb1fe366ebaf02d8526e7c4989ea9d2 # v7.4.0
+        uses: anchore/scan-action@27805bf3b4e84b4a5c980df22ed233c00390a439 # v7.4.2
         with:
           path: "."
         continue-on-error: true
       - name: Upload Anchore scan SARIF report
-        uses: github/codeql-action/upload-sarif@e4fba868fa4b1b91e1fdab776edc8cfbe6e9fb81 # v4.37.3
+        uses: github/codeql-action/upload-sarif@cdf488f595d80d6e07e03d4674febd5ab45fa938 # v4.37.9
         with:
           sarif_file: ${{ steps.scan.outputs.sarif }}
       - name: Scan current project
-        uses: anchore/scan-action@e1165082ffb1fe366ebaf02d8526e7c4989ea9d2 # v7.4.0
+        uses: anchore/scan-action@27805bf3b4e84b4a5c980df22ed233c00390a439 # v7.4.2
         with:
           path: "."
 
@@ -179,7 +179,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Run Markdownlint
-        uses: DavidAnson/markdownlint-cli2-action@6bf21b07787794f89a243495939cd651942aeabe # v24.1.0
+        uses: DavidAnson/markdownlint-cli2-action@21c1be1b93ad9ed58fa840aacc3f279cde2a72ff # v24.2.0
         with:
           config: ".github/tool-configurations/.markdownlint-cli2.jsonc"
           globs: |
@@ -199,7 +199,7 @@ jobs:
       - name: Set up Just
         uses: extractions/setup-just@53165ef7e734c5c07cb06b3c8e7b647c5aa16db3 # v4.0.0
       - name: Run Prek Action
-        uses: j178/prek-action@5337cb91e0fa35a7ff31b9ca345126d8bbbcdf16 # v2.0.6
+        uses: j178/prek-action@4e14d07f9231acabce116ccfca13b13dd9755ece # v3.0.0
         with:
           prek-version: "0.4.8"
 
@@ -215,7 +215,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
       - name: Install Prettier
-        run: npm install -g prettier@3.9.5 # zizmor: ignore[adhoc-packages]
+        run: npm install -g prettier@3.9.6 # zizmor: ignore[adhoc-packages]
       - name: Set up Just
         uses: extractions/setup-just@53165ef7e734c5c07cb06b3c8e7b647c5aa16db3 # v4.0.0
       - name: Check Code Formatting with Prettier
@@ -242,7 +242,7 @@ jobs:
           output: "trivy-results.sarif"
           version: v0.71.2
       - name: Upload Trivy SARIF report
-        uses: github/codeql-action/upload-sarif@e4fba868fa4b1b91e1fdab776edc8cfbe6e9fb81 # v4.37.3
+        uses: github/codeql-action/upload-sarif@cdf488f595d80d6e07e03d4674febd5ab45fa938 # v4.37.9
         with:
           sarif_file: trivy-results.sarif
 
@@ -258,7 +258,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Secret Scanning
-        uses: trufflesecurity/trufflehog@27b0417c16317ca9a472a9a8092acce143b49c55 # v3.95.9
+        uses: trufflesecurity/trufflehog@20652fbbdefffcdaa493a5bf57ab2ac6b1db715b # v3.97.1
         with:
           extra_args: --results=verified,unknown
 
@@ -294,7 +294,7 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
       - name: Run zizmor 🌈
-        uses: zizmorcore/zizmor-action@6fc4b006235f201fdab3722e17240ab420d580e5 # v0.6.1
+        uses: zizmorcore/zizmor-action@3dc1ecc9bcb9e94e9b2c709687979e1298497054 # v0.6.2
         with:
           persona: auditor
-          version: 1.26.1
+          version: 1.28.0
