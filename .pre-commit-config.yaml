@@ -33,7 +33,7 @@ repos:
         name: Actionlint
         description: Linter for GitHub Actions workflow files
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: bebfac867564fbd992e5b45379b4b0568d5cb85b # frozen: 3.6.1
+    rev: e8b4e28241a9ae8296ba6e4a491b5da4eda73283 # frozen: 3.11.1
     hooks:
       - id: editorconfig-checker
         name: EditorConfig Checker
@@ -60,7 +60,7 @@ repos:
         language: python
         entry: just
         additional_dependencies:
-          - rust-just==1.57.0
+          - rust-just==1.58.0
         args: ["format-check"]
         files: "(?i)(^justfile$|\\.just$)"
         pass_filenames: false
@@ -69,7 +69,7 @@ repos:
         language: golang
         entry: pinact
         additional_dependencies:
-          - github.com/suzuki-shunsuke/pinact/v4/cmd/pinact@v4.1.0
+          - github.com/suzuki-shunsuke/pinact/v4/cmd/pinact@v4.1.1
         args:
           [
             "run",
@@ -80,4 +80,4 @@ repos:
           ]
         files: "^\\.github/(workflows|actions)/.*\\.ya?ml$|(^|/)action\\.ya?ml$"
         pass_filenames: false
-        language_version: "go1.26.4"
+        language_version: "go1.26.5"
