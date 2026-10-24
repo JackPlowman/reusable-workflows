@@ -75,6 +75,8 @@ repos:
             "run",
             "-c",
             ".github/tool-configurations/pinact.yml",
+            "--exclude",
+            "^docker://",
             "--verify",
             "--check",
           ]
