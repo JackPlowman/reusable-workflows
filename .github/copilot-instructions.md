@@ -39,7 +39,6 @@ just format-check          # Check Justfile formatting
 # Security checks
 just gitleaks-detect       # Run secret detection
 just zizmor-check          # Check GitHub Actions security
-just actionlint-check      # Lint workflow files
 
 # Git hooks
 just install-git-hooks     # Install pre-commit hooks
@@ -55,7 +54,6 @@ Automatic checks run on every commit:
 - Justfile formatting
 - Prek Check
 - GitHub Actions security (zizmor)
-- Workflow linting (actionlint)
 
 ### Tool Configuration Examples
 
@@ -105,7 +103,7 @@ permissions:
 
 - **Markdown**: linkspector, markdownlint-cli2
 - **YAML**: yamllint
-- **GitHub Actions**: actionlint, zizmor, pinact
+- **GitHub Actions**: zizmor, pinact
 - **Security**: gitleaks, trufflehog, grype, trivy
 - **Formatting**: prettier, editorconfig-checker
 - **Build Tools**: just format checking

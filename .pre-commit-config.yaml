@@ -26,12 +26,6 @@ repos:
         name: Gitleaks - Secret Detection
         description: Scan for secrets using Gitleaks
         language_version: "go1.26"
-  - repo: https://github.com/rhysd/actionlint
-    rev: 914e7df21a07ef503a81201c76d2b11c789d3fca # frozen: v1.7.12
-    hooks:
-      - id: actionlint
-        name: Actionlint
-        description: Linter for GitHub Actions workflow files
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
     rev: e8b4e28241a9ae8296ba6e4a491b5da4eda73283 # frozen: 3.11.1
     hooks:

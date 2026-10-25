@@ -73,7 +73,6 @@ The `common-code-checks.yml` workflow provides comprehensive code quality and se
   - Gitleaks - Secret detection
   - TruffleHog - Advanced secret scanning
 - **Code Quality**:
-  - Actionlint - GitHub Actions workflow linting
   - EditorConfig - File format consistency checking
 
 ### CodeQL Analysis

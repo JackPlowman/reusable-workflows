@@ -1,6 +1,0 @@
-# Actionlint 1.7.12 predates GitHub's self-repository workflow syntax.
-# Remove this exception when Actionlint supports $/ workflow references.
-paths:
-  .github/workflows/{clean-caches,code-checks,pull-request-tasks,sync-labels}.yml:
-    ignore:
-      - '^reusable workflow call "\$/\.github/workflows/(common-clean-caches|codeql-analysis|common-code-checks|common-pull-request-tasks|common-sync-labels)\.yml" at "uses" is not following the format '
