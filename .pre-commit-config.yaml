@@ -63,7 +63,7 @@ repos:
         language: golang
         entry: pinact
         additional_dependencies:
-          - github.com/suzuki-shunsuke/pinact/v5/cmd/pinact@v5.0.1
+          - github.com/suzuki-shunsuke/pinact/v5/cmd/pinact@v5.0.2
         args:
           [
             "run",
