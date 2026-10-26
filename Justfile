@@ -34,9 +34,9 @@ gitleaks-detect:
 # Prek
 # ------------------------------------------------------------------------------
 
-# Run prek checking on all pre-commit config files
+# Validate the repository's prek configuration
 prek-check:
-    find . -name "pre-commit-config.*" -exec prek validate-config -c {} \;
+    prek validate-config .pre-commit-config.yaml
 
 # ------------------------------------------------------------------------------
 # Zizmor
